@@ -73,15 +73,15 @@ const DEFAULT_INSTAGRAM = 'https://instagram.com/meemz.cameo';
 let settings = {
   siteName: 'ميمز كاميو',
   siteNameEn: 'Meemz Cameo',
-  siteDescription: 'هدايا وفن ورقي مصنوع يدوياً بحب في سلطنة عُمان.',
-  siteDescriptionEn: 'Handmade gifts and paper art, crafted with love in Oman.',
-  heroTitle: 'هدايا تُصنع بحب، وفن ورقي يحكي قصتك',
-  heroTitleEn: 'Gifts made with love, paper art that tells your story',
-  heroSubtitle: 'بوكسات هدايا، ورد ورقي، لوحات وبطاقات مخصصة بالاسم لكل مناسبة. نصنعها بتفاصيل دقيقة ونوصلها لباب بيتك في عُمان.',
-  heroSubtitleEn: 'Gift boxes, paper flowers, frames and cards personalised with a name for every occasion — crafted in fine detail and delivered to your door in Oman.',
+  siteDescription: "صُنعت لكم بعناية وحب — توزيعات وتفعيلات مدرسية ومناسبات في سلطنة عُمان.",
+  siteDescriptionEn: "Made for you with care and love — school and occasion favours and activities in Oman.",
+  heroTitle: "توزيعات مدرسية ومناسبات، صُنعت لكم بعناية وحب",
+  heroTitleEn: "School & occasion favours, made for you with care and love",
+  heroSubtitle: "بوكسات توزيعات بثيم مناسبتك، تفعيلات الحروف، أنشطة وتلوين، مشاريع مدرسية وقصاصات ورقية — نجهزها بالعدد الذي تحتاجينه ونوصلها لجميع أنحاء السلطنة.",
+  heroSubtitleEn: "Favour boxes in your occasion's theme, letter activities, activity and colouring boxes, school projects and paper cutouts — prepared in the quantity you need and delivered anywhere in Oman.",
   tickerItems: [],
-  seoTitle: 'ميمز كاميو — هدايا وفن ورقي مصنوع بحب',
-  seoDescription: 'ميمز كاميو: هدايا مميزة وفن ورقي مصنوع يدوياً في سلطنة عُمان، مع تخصيص بالاسم وتوصيل لجميع الولايات.',
+  seoTitle: "ميمز كاميو — توزيعات وتفعيلات مدرسية ومناسبات",
+  seoDescription: "ميمز كاميو: بوكسات توزيعات للمناسبات المدرسية والوطنية، تفعيلات الحروف، مشاريع مدرسية وقصاصات ورقية — صُنعت لكم بعناية وحب، مع توصيل لجميع أنحاء السلطنة.",
   seoImage: '',
   deliveryCost: 2.000,
   vatRate: 0,
@@ -91,19 +91,8 @@ let settings = {
   paymentPhone: '',
   bankName: '',
   bankAccount: '',
-  categories: [
-    {id:'gift-boxes', icon:'gift', name:'بوكسات الهدايا', nameEn:'Gift boxes', active:true},
-    {id:'paper-flowers', icon:'flower', name:'ورد ورقي', nameEn:'Paper flowers', active:true},
-    {id:'paper-art', icon:'frame', name:'لوحات وفن ورقي', nameEn:'Paper art & frames', active:true},
-    {id:'cards', icon:'card', name:'بطاقات وتغليف', nameEn:'Cards & wrapping', active:true},
-    {id:'occasions', icon:'ribbon', name:'توزيعات المناسبات', nameEn:'Occasion favours', active:true},
-    {id:'custom', icon:'scissors', name:'طلبات خاصة', nameEn:'Custom orders', active:true}
-  ],
-  services: [
-    {icon:'gift', title:'تغليف هدايا', titleEn:'Gift wrapping', desc:'نغلف هديتك بشكل أنيق وجاهز للإهداء مع بطاقة لرسالتك.', descEn:'Elegant, ready-to-give wrapping with a card for your message.', message:'مرحباً ميمز كاميو، أريد خدمة تغليف هدية.'},
-    {icon:'pen', title:'تخصيص بالاسم', titleEn:'Name personalisation', desc:'نضيف الاسم أو العبارة التي تحبينها على القطعة بخط جميل.', descEn:'We add a name or a phrase you love in beautiful lettering.', message:'مرحباً ميمز كاميو، أريد تخصيص هدية بالاسم.'},
-    {icon:'ribbon', title:'طلبات المناسبات', titleEn:'Event orders', desc:'توزيعات مواليد، تخرج، أعراس وأعياد بكميات وتصميم موحد.', descEn:'Favours for newborns, graduations, weddings and Eid — in quantity, with one design.', message:'مرحباً ميمز كاميو، أريد طلب توزيعات لمناسبة.'}
-  ],
+  categories: [{"id": "occasion-boxes", "icon": "gift", "name": "بوكسات توزيعات المناسبات", "nameEn": "Occasion favour boxes", "active": true}, {"id": "activity-boxes", "icon": "pen", "name": "بوكسات الأنشطة والتلوين", "nameEn": "Activity & colouring boxes", "active": true}, {"id": "letter-activities", "icon": "sparkle", "name": "تفعيلات الحروف", "nameEn": "Letter activities", "active": true}, {"id": "school-projects", "icon": "frame", "name": "مشاريع مدرسية", "nameEn": "School projects", "active": true}, {"id": "paper-cutouts", "icon": "scissors", "name": "قصاصات الورق", "nameEn": "Paper cutouts", "active": true}, {"id": "birthdays", "icon": "ribbon", "name": "توزيعات أعياد الميلاد", "nameEn": "Birthday favours", "active": true}],
+  services: [{"icon": "sparkle", "title": "تصميم بثيم مناسبتك", "titleEn": "Designed for your occasion", "desc": "نصمم التوزيعات بشعار المدرسة واسم المناسبة وألوانها — مهرجان العلوم، يوم الزراعة، يوم المرأة وغيرها.", "descEn": "We design favours with your school logo, occasion name and colours — science festival, Agriculture Day, Women's Day and more.", "message": "مرحباً ميمز كاميو، أريد توزيعات بثيم مناسبة خاصة:"}, {"icon": "box", "title": "تجهيز الطلبات بالكميات", "titleEn": "Bulk order preparation", "desc": "نجهز البوكسات لصف كامل أو مدرسة كاملة، مغلفة وجاهزة للتوزيع.", "descEn": "We prepare boxes for a whole class or school, packed and ready to hand out.", "message": "مرحباً ميمز كاميو، أريد طلب توزيعات بكمية كبيرة."}, {"icon": "scissors", "title": "تفعيلات وقصاصات حسب الطلب", "titleEn": "Activities & cutouts on request", "desc": "تفعيلات الحروف، المشاريع المدرسية والقصاصات الورقية مقصوصة وجاهزة للاستخدام.", "descEn": "Letter activities, school projects and paper cutouts, cut and ready to use.", "message": "مرحباً ميمز كاميو، أريد تفعيل حرف / مشروع مدرسي:"}],
   ads: [],
   coupons: []
 };
@@ -203,11 +192,11 @@ function iconSvg(name, cls='svg-icon'){
   return `<svg class="${cls}" aria-hidden="true" focusable="false"><use href="#i-${safe}"></use></svg>`;
 }
 const ICON_MAP={
-  '🎁':'gift','🌸':'flower','🌷':'flower','🌹':'flower','💐':'flower','🖼️':'frame','💌':'card','✉️':'card','🎀':'ribbon','✂️':'scissors',
+  '🎁':'gift','📚':'frame','✏️':'pen','🍫':'box','🌱':'flower','🧪':'sparkle','🌸':'flower','🌷':'flower','🌹':'flower','💐':'flower','🖼️':'frame','💌':'card','✉️':'card','🎀':'ribbon','✂️':'scissors',
   '❤️':'heart','💖':'heart','✨':'sparkle','🖊️':'pen','✍️':'pen','📦':'box','🚚':'truck','🛍️':'bag',
   gift:'gift','gift-boxes':'gift',boxes:'gift',flower:'flower',flowers:'flower','paper-flowers':'flower',
   frame:'frame',frames:'frame','paper-art':'frame',art:'frame',card:'card',cards:'card',ribbon:'ribbon',occasions:'ribbon',
-  scissors:'scissors',custom:'scissors',heart:'heart',sparkle:'sparkle',pen:'pen',box:'box',truck:'truck',bag:'bag'
+  scissors:'scissors',custom:'scissors','occasion-boxes':'gift','activity-boxes':'pen','letter-activities':'sparkle','school-projects':'frame','paper-cutouts':'scissors',birthdays:'ribbon',heart:'heart',sparkle:'sparkle',pen:'pen',box:'box',truck:'truck',bag:'bag'
 };
 function iconName(value){
   const raw=String(value||'').trim();
@@ -323,13 +312,13 @@ function applySettings(){
     'shop-page':T('المتجر','Shop'),'about-page':T('قصتنا','Our story'),'my-orders-page':T('طلباتي','My orders')
   };
   const pageKey=Object.keys(pageTitles).find(k=>document.body.classList.contains(k));
-  const baseTitle=lang==='en' ? `${siteName} — Handmade gifts & paper art` : (settings.seoTitle||siteName);
+  const baseTitle=lang==='en' ? `${siteName} — School & occasion favours` : (settings.seoTitle||siteName);
   if(!document.body.classList.contains('product-page')) document.title=pageKey ? `${pageTitles[pageKey]} · ${siteName}` : baseTitle;
   setMeta('description', settings.seoDescription || settings.siteDescription);
   setMeta('og:title', settings.seoTitle || siteName, 'property');
   setMeta('og:description', settings.seoDescription || settings.siteDescription, 'property');
   if(settings.seoImage) setMeta('og:image', settings.seoImage, 'property');
-  const wa=whatsappUrl(settings.waNumber, T('مرحباً ميمز كاميو 🌸','Hello Meemz Cameo 🌸'));
+  const wa=whatsappUrl(settings.waNumber, T('مرحباً ميمز كاميو ✨','Hello Meemz Cameo ✨'));
   ['waCtaBtn','waFloat'].forEach(k=>{ if(id(k)) id(k).href=wa; });
   document.querySelectorAll('[data-wa-link]').forEach(a=>{ a.href=wa; });
   document.querySelectorAll('[data-wa-text]').forEach(el=>{ el.textContent=prettyPhone(settings.waNumber); });
@@ -394,7 +383,7 @@ function openServiceWhatsApp(index){
   window.open(whatsappUrl(settings.waNumber, s.message || `${T('مرحباً، أريد الاستفسار عن','Hello, I would like to ask about')} ${L(s,'title')}`),'_blank','noopener');
 }
 function openCustomOrder(){
-  window.open(whatsappUrl(settings.waNumber, T('مرحباً ميمز كاميو 🌸 أريد طلب تصميم خاص:','Hello Meemz Cameo 🌸 I would like a custom piece:')),'_blank','noopener');
+  window.open(whatsappUrl(settings.waNumber, T('مرحباً ميمز كاميو ✨ أريد طلب توزيعات لمناسبة:\nالمناسبة / المدرسة: \nالعدد: \nالتاريخ المطلوب: ','Hello Meemz Cameo ✨ I would like favours for an occasion:\nOccasion / school: \nQuantity: \nDate needed: ')),'_blank','noopener');
 }
 function renderAds(){
   const section=id('adsSection'), grid=id('adsGrid');
@@ -524,7 +513,7 @@ function renderProducts(){
   const tag=id('productsSectionTag'), title=id('productsSectionTitle');
   if(isHome){
     if(tag) tag.textContent=T('وصل حديثاً','New arrivals');
-    if(title) title.textContent=T('أحدث القطع في المتجر','The latest pieces in the shop');
+    if(title) title.textContent=T('أحدث البوكسات والتفعيلات','Latest boxes & activities');
   }else{
     if(tag) tag.textContent=activeFilter==='all' ? T('كل الفئات','All categories') : T('الفئة','Category');
     if(title) title.textContent=activeFilter==='all' ? T('كل المنتجات','All products') : catLabel(activeFilter);
@@ -532,7 +521,7 @@ function renderProducts(){
   if(id('productsCount')) id('productsCount').textContent=num(list.length);
   if(!productsLoaded){ grid.innerHTML=''; return; }
   if(!list.length){
-    grid.innerHTML=`<div class="empty-state">${iconSvg('gift')}<div>${query ? T('لا توجد نتائج مطابقة لبحثك.','No results match your search.') : T('لا توجد منتجات هنا بعد — تابعينا، القطع الجديدة قادمة قريباً.','No products here yet — new pieces are coming soon.')}</div></div>`;
+    grid.innerHTML=`<div class="empty-state">${iconSvg('gift')}<div>${query ? T('لا توجد نتائج مطابقة لبحثك.','No results match your search.') : T('لا توجد بوكسات هنا بعد — اطلبيها بثيم مناسبتك عبر واتساب.','No boxes here yet — order one in your occasion\'s theme on WhatsApp.')}</div><button class="btn-ghost btn-sm" style="margin-top:14px" type="button" onclick="openCustomOrder()">${iconSvg('whatsapp')} ${T('اطلبي عبر واتساب','Order on WhatsApp')}</button></div>`;
     return;
   }
   grid.innerHTML=list.map(productCardHtml).join('');
@@ -580,7 +569,7 @@ function changeDetailQty(delta){
 }
 function askProductWhatsApp(pid){
   const p=products.find(x=>String(x.id)===String(pid)); if(!p)return;
-  const msg=T(`مرحباً ميمز كاميو، أريد الاستفسار عن: ${p.name} (${omr(p.price)})`,`Hello Meemz Cameo, I'd like to ask about: ${productName(p)} (${omr(p.price)})`);
+  const msg=T(`مرحباً ميمز كاميو، أريد الاستفسار عن: ${p.name} (${omr(p.price)})\nالمناسبة / المدرسة: \nالعدد: `,`Hello Meemz Cameo, I'd like to ask about: ${productName(p)} (${omr(p.price)})`);
   window.open(whatsappUrl(settings.waNumber,msg),'_blank','noopener');
 }
 function renderDetailList(title, items){
@@ -638,10 +627,10 @@ function renderProductDetails(){
           <button class="btn-ghost" type="button" onclick="askProductWhatsApp(${Number(p.id)})">${iconSvg('whatsapp')} ${T('اسألي عبر واتساب','Ask on WhatsApp')}</button>
         </div>
         <div class="detail-meta">
-          <div class="detail-meta-item"><div class="detail-meta-label">${T('التخصيص','Personalisation')}</div><div class="detail-meta-value">${T('اكتبي الاسم أو العبارة عند إتمام الطلب','Add the name or wording at checkout')}</div></div>
+          <div class="detail-meta-item"><div class="detail-meta-label">${T('التخصيص','Personalisation')}</div><div class="detail-meta-value">${T('اكتبي اسم المدرسة أو المناسبة عند إتمام الطلب','Add your school or occasion name at checkout')}</div></div>
           <div class="detail-meta-item"><div class="detail-meta-label">${T('مدة التجهيز والتوصيل','Making & delivery time')}</div><div class="detail-meta-value">${esc(p.deliveryTime||T('٢–٥ أيام عمل','2–5 working days'))}</div></div>
           ${renderSpecTable(T('التفاصيل','Details'), p.specs)}
-          ${renderDetailList(T('ماذا تشمل الهدية','What\'s included'), p.boxContents)}
+          ${renderDetailList(T('محتويات البوكس','What\'s in the box'), p.boxContents)}
         </div>
         ${p.reviews>0?`<div class="detail-reviews"><h4>${T('تقييمات المشترين','Customer reviews')}</h4><div class="detail-review-row">${starsHtml(p.rating)}<span>${T('التقييم متاح بعد استلام الطلب','Reviews are collected after delivery')}</span></div></div>`:''}
       </div>
@@ -703,7 +692,7 @@ function updateCartUI(){
   const itemsEl=id('cartItems'), footer=id('cartFooter');
   if(!itemsEl)return;
   if(!cart.length){
-    itemsEl.innerHTML=`<div class="cart-empty">${iconSvg('gift')}<div style="font-weight:600;color:var(--olive)">${T('سلتك فارغة','Your cart is empty')}</div><div style="font-size:14px">${T('اختاري هدية تفرح من تحبين','Pick a gift for someone you love')}</div><a class="btn-ghost btn-sm" style="margin-top:16px" href="/shop.html">${T('تصفحي المتجر','Browse the shop')}</a></div>`;
+    itemsEl.innerHTML=`<div class="cart-empty">${iconSvg('gift')}<div style="font-weight:600;color:var(--olive)">${T('سلتك فارغة','Your cart is empty')}</div><div style="font-size:14px">${T('اختاري بوكس مناسبتك','Pick a box for your occasion')}</div><a class="btn-ghost btn-sm" style="margin-top:16px" href="/shop.html">${T('تصفحي المتجر','Browse the shop')}</a></div>`;
     if(footer) footer.hidden=true;
     return;
   }
@@ -809,7 +798,7 @@ function renderOrderStep1(){
       <div class="form-group"><label class="form-label" for="oArea">${T('الولاية / المنطقة','Wilayat / area')} *</label><input class="form-input" id="oArea" placeholder="${T('مثال: السيب، الخوض','e.g. Seeb, Al Khoudh')}" oninput="saveCheckoutDraft()"/></div>
     </div>
     <div class="form-group"><label class="form-label" for="oPhone">${T('رقم الواتساب','WhatsApp number')} *</label><input class="form-input" id="oPhone" placeholder="9XXXXXXX" dir="ltr" inputmode="numeric" autocomplete="tel" oninput="saveCheckoutDraft()" onblur="normalizeOmanPhoneField(this);saveCheckoutDraft()"/><div class="form-hint">${T('٨ أرقام عُمانية — سنرسل لك تحديثات الطلب عليه.','8-digit Omani number — we\'ll send order updates here.')}</div></div>
-    <div class="form-group"><label class="form-label" for="oGiftMessage">${T('رسالة الإهداء / الاسم للتخصيص','Gift message / name to personalise')}</label><textarea class="form-input" id="oGiftMessage" rows="3" maxlength="500" placeholder="${T('مثال: الاسم «سارة» بخط ذهبي، وبطاقة: كل عام وأنتِ بخير','e.g. the name “Sara” in gold, card: Happy birthday!')}" oninput="saveCheckoutDraft()"></textarea><div class="form-hint">${T('اختياري — اكتبي أي اسم أو عبارة أو ألوان مفضلة.','Optional — any name, wording or favourite colours.')}</div></div>
+    <div class="form-group"><label class="form-label" for="oGiftMessage">${T('تفاصيل التخصيص','Personalisation details')}</label><textarea class="form-input" id="oGiftMessage" rows="3" maxlength="500" placeholder="${T('مثال: مدرسة النهضة — يوم الزراعة العماني — الصف الثالث، وتاريخ الاستلام المطلوب','e.g. Al Nahda School — Omani Agriculture Day — Grade 3, and the date you need it')}" oninput="saveCheckoutDraft()"></textarea><div class="form-hint">${T('اسم المدرسة أو المناسبة، الثيم أو الألوان، وأي ملاحظة.','School or occasion name, theme or colours, and any notes.')}</div></div>
     <div class="form-section-title">${iconSvg('truck')} ${T('طريقة الاستلام','Delivery method')}</div>
     <div class="delivery-toggle">
       <label class="delivery-opt ${deliveryChoice==='with'?'selected':''}" id="dOpt1" onclick="selectDelivery('with')"><input type="radio" name="delivery" value="with" ${deliveryChoice==='with'?'checked':''}/><strong>${iconSvg('truck')} ${T('توصيل للبيت','Home delivery')}</strong><small>${omr(settings.deliveryCost)}</small></label>
@@ -877,7 +866,7 @@ function renderOrderStep2(){
       ${settings.bankName?`<div>${T('البنك','Bank')}: <strong>${esc(settings.bankName)}</strong></div>`:''}
       ${settings.bankAccount?`<div>${T('رقم الحساب / IBAN','Account / IBAN')}: <strong dir="ltr">${esc(settings.bankAccount)}</strong></div>`:''}
       ${!settings.paymentPhone&&!settings.bankName&&!settings.bankAccount?`<div>${T('سنرسل لك بيانات التحويل على واتساب.','We\'ll send you the transfer details on WhatsApp.')}</div>`:''}
-      <div class="note">${T('بعد التحويل أرفقي صورة أو PDF للإيصال. نبدأ تجهيز هديتك بعد تأكيد التحويل.','After transferring, attach a photo or PDF of the receipt. We start crafting once the payment is confirmed.')}</div>
+      <div class="note">${T('بعد التحويل أرفقي صورة أو PDF للإيصال. نبدأ تجهيز طلبك بعد تأكيد التحويل.','After transferring, attach a photo or PDF of the receipt. We start preparing once the payment is confirmed.')}</div>
     </div>
     <div class="receipt-box">
       <label class="form-label" for="paymentProof">${iconSvg('paperclip')} ${T('إرفاق الإيصال','Attach receipt')} *</label>
@@ -936,7 +925,7 @@ function renderOrderStep3(){
       <div class="price-row"><span>${T('الاسم','Name')}</span><span>${esc(d.name)}</span></div>
       <div class="price-row"><span>${T('العنوان','Address')}</span><span>${esc(wil?T(wil[0],wil[1]):d.wilayat)} / ${esc(d.area)}</span></div>
       <div class="price-row"><span>${T('الواتساب','WhatsApp')}</span><span dir="ltr">${esc(d.phone)}</span></div>
-      ${d.giftMessage?`<div class="price-row"><span>${T('رسالة الإهداء','Gift message')}</span><span>${esc(d.giftMessage)}</span></div>`:''}
+      ${d.giftMessage?`<div class="price-row"><span>${T('تفاصيل التخصيص','Personalisation')}</span><span>${esc(d.giftMessage)}</span></div>`:''}
       <div class="price-row"><span>${T('الإيصال','Receipt')}</span><span>${esc(d.proofFile?.name||T('مرفق','Attached'))}</span></div>
     </div>
     ${cartPreviewHtml(true)}
@@ -1013,7 +1002,7 @@ function showSuccessScreen(orderId,name){
     <div class="success-screen">
       <div class="success-icon">${iconSvg('heart')}</div>
       <div class="success-title">${T(`شكراً ${esc(name)}!`,`Thank you, ${esc(name)}!`)}</div>
-      <p class="success-sub">${T('وصلنا طلبك، وسنراجع الإيصال ونؤكد لك على واتساب قريباً.','We\'ve received your order. We\'ll check the receipt and confirm on WhatsApp shortly.')}</p>
+      <p class="success-sub">${T('وصلنا طلبك، وسنراجع الإيصال ونؤكد لك على واتساب قريباً. صُنعت لكم بعناية وحب 🫶🏻','We\'ve received your order. We\'ll check the receipt and confirm on WhatsApp shortly.')}</p>
       <div class="success-order-id">${esc(orderId)}</div>
       <div class="success-note">${T('احتفظي برقم الطلب لتتبعه من «تتبع الطلب» أو صفحة «طلباتي».','Keep this order number to track it from “Track order” or “My orders”.')}</div>
       <div class="btn-pair">
@@ -1111,14 +1100,15 @@ function trackOrder(){
 function openPolicy(type){
   const content={
     faq:[T('الأسئلة الشائعة','FAQ'),[
-      T('كم تستغرق صناعة الهدية؟ عادةً من ٢ إلى ٥ أيام عمل حسب القطعة والتخصيص.','How long does it take? Usually 2–5 working days depending on the piece and personalisation.'),
-      T('هل يمكن التخصيص بالاسم؟ نعم، اكتبي الاسم أو العبارة في «رسالة الإهداء» عند إتمام الطلب.','Can I add a name? Yes — write the name or wording in the “Gift message” at checkout.'),
-      T('كيف أدفع؟ بالتحويل البنكي أو لرقم الهاتف، ثم إرفاق الإيصال مع الطلب.','How do I pay? By bank or phone transfer, then attach the receipt to your order.'),
-      T('هل توصلون لكل عُمان؟ نعم، نوصل لجميع المحافظات، ويمكنك اختيار الاستلام بنفسك.','Do you deliver across Oman? Yes, to every governorate — or choose pickup.')
+      T('هل السعر للقطعة أم للبوكس؟ السعر لكل بوكس، وعدد التوزيعات مكتوب في اسم المنتج (مثال: 32 توزيعة).','Is the price per piece or per box? Per box — the number of pieces is in the product name (e.g. 32 pieces).'),
+      T('هل يمكن تغيير الثيم أو إضافة اسم المدرسة؟ نعم، اكتبي التفاصيل في «تفاصيل التخصيص» عند الطلب أو راسلينا على واتساب.','Can you change the theme or add the school name? Yes — write it in “Personalisation details” at checkout or message us on WhatsApp.'),
+      T('كم يستغرق التجهيز؟ حسب الكمية والتصميم، لذا اطلبي مبكراً قبل موعد المناسبة واذكري التاريخ المطلوب.','How long does it take? It depends on quantity and design, so order early and tell us the date you need.'),
+      T('كيف أدفع؟ تأكيد الطلب عند التحويل، ولا يوجد دفع عند الاستلام. أرفقي صورة الإيصال مع الطلب.','How do I pay? Orders are confirmed on transfer — no cash on delivery. Attach the receipt to your order.'),
+      T('هل توصلون لكل عُمان؟ نعم، يوجد توصيل لجميع أنحاء السلطنة، ويمكنك اختيار الاستلام بنفسك.','Do you deliver across Oman? Yes, anywhere in the Sultanate — or choose pickup.')
     ]],
     returns:[T('الاستبدال والإرجاع','Exchanges & returns'),[
-      T('لأن أغلب القطع تُصنع يدوياً وحسب الطلب، لا يمكن إرجاع القطع المخصصة بالاسم.','Because most pieces are handmade to order, personalised items can\'t be returned.'),
-      T('إذا وصلتك القطعة متضررة، راسلينا على واتساب خلال ٢٤ ساعة من الاستلام مع صورة وسنعالج الأمر.','If your piece arrives damaged, message us on WhatsApp within 24 hours of delivery with a photo and we\'ll make it right.')
+      T('لأن التوزيعات تُطبع وتُجهز حسب الطلب وبثيم مناسبتك، لا يمكن إرجاع الطلبات المخصصة.','Because favours are printed and prepared to order in your theme, personalised orders can\'t be returned.'),
+      T('إذا وصلك الطلب ناقصاً أو متضرراً، راسلينا على واتساب خلال ٢٤ ساعة من الاستلام مع صورة وسنعالج الأمر.','If your order arrives incomplete or damaged, message us on WhatsApp within 24 hours of delivery with a photo and we\'ll make it right.')
     ]]
   }[type] || [T('معلومات المتجر','Store information'),[T('تواصلي معنا عبر واتساب لأي استفسار.','Message us on WhatsApp with any question.')]];
   id('policyTitle').textContent=content[0];
@@ -1138,7 +1128,7 @@ function openReviewFromHash(){
       if(!j.success)throw new Error('not found');
       const items=j.order.items||[];
       selectedReviewRating=5;
-      id('policyTitle').textContent=T('قيّمي هديتك','Rate your gift');
+      id('policyTitle').textContent=T('قيّمي طلبك','Rate your order');
       id('policyContent').innerHTML=`
         <div class="review-card">${T('سعداء بوصول طلبك! رأيك يساعدنا نصنع قطعاً أجمل.','We\'re happy your order arrived! Your feedback helps us make even lovelier pieces.')}</div>
         <div class="form-group"><label class="form-label" for="reviewProduct">${T('المنتج','Product')}</label><select class="form-select" id="reviewProduct">${items.map(i=>`<option value="${esc(i.id)}">${esc(i.name)}</option>`).join('')}</select></div>
