@@ -1,0 +1,56 @@
+services:
+  - type: web
+    name: meemz-cameo
+    env: node
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: SESSION_SECRET
+        generateValue: true
+      # Set these two to your final site address, e.g. https://meemz-cameo.onrender.com
+      - key: PUBLIC_URL
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: UPLOAD_DIR
+        value: public/uploads
+      - key: SUPABASE_STORAGE_BUCKET
+        value: product-images
+      # From the NEW Meemz Cameo Supabase project (Settings → API / Database)
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      # Optional: WhatsApp Cloud API notifications (Meemz Cameo's own Meta account).
+      # Leave empty to turn automatic WhatsApp messages off — the store works without them.
+      - key: WHATSAPP_PHONE_NUMBER_ID
+        sync: false
+      - key: WHATSAPP_BUSINESS_ACCOUNT_ID
+        sync: false
+      - key: WHATSAPP_ACCESS_TOKEN
+        sync: false
+      - key: WHATSAPP_APP_SECRET
+        sync: false
+      - key: WHATSAPP_VERIFY_TOKEN
+        sync: false
+      - key: WHATSAPP_GRAPH_VERSION
+        value: v20.0
+      - key: WHATSAPP_TEMPLATE_LANGUAGE
+        value: ar
+      - key: WHATSAPP_STAFF_ORDER_TEMPLATE
+        value: meemz_staff_new_order
+      - key: WHATSAPP_CUSTOMER_ORDER_TEMPLATE
+        value: meemz_order_confirmed
+      - key: WHATSAPP_CUSTOMER_STATUS_TEMPLATE
+        value: meemz_order_status
+      - key: WHATSAPP_REVIEW_TEMPLATE
+        value: meemz_review_request

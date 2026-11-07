@@ -1,0 +1,39 @@
+{
+  "name": "meemz-cameo-store",
+  "version": "1.0.0",
+  "description": "Meemz Cameo (ميمز كاميو) — online store for handmade gifts and paper art",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "tsx watch server/_core/index.ts",
+    "start": "tsx server/_core/index.ts",
+    "build": "echo 'No build step - static storefront in public/'",
+    "check": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "express-rate-limit": "^8.5.2",
+    "express-session": "^1.19.0",
+    "helmet": "^8.2.0",
+    "multer": "^2.2.0",
+    "nodemailer": "^10.3.1",
+    "postgres": "^3.4.9",
+    "tsx": "^4.22.3"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "4.17.21",
+    "@types/node": "^24.12.4",
+    "typescript": "5.9.3",
+    "vitest": "^2.1.9"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

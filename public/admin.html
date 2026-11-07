@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>لوحة التحكم · ميمز كاميو</title>
+  <style>
+    :root{--bg:#F5F0E6;--panel:#FBF8F2;--text:#555D50;--text2:#6B7265;--accent:#CF7486;--red:#B4473F;--border:rgba(85,93,80,.18);}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;font-family:'Meemz Sans',Tahoma,Arial,sans-serif;background:radial-gradient(900px 500px at 100% 0,rgba(207,116,134,.14),transparent 60%),var(--bg);color:var(--text);display:grid;place-items:center;padding:22px;}
+    .login-card{width:min(460px,100%);border:1px solid var(--border);border-radius:24px;background:var(--panel);box-shadow:0 30px 60px -24px rgba(85,93,80,.35);overflow:hidden;}
+    .login-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 26px;border-bottom:1px solid var(--border);}
+    .login-head h1{margin:0;font-family:'Meemz Display',serif;font-size:1.3rem;font-weight:600}
+    .login-logo{display:block;height:64px;width:auto;margin:6px auto 18px}
+    .close-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text);font-size:22px;cursor:pointer;}
+    .login-body{padding:26px}
+    .form-group{margin-bottom:16px}
+    .form-label{display:block;margin-bottom:6px;font-weight:600;font-size:14px;}
+    .form-input{width:100%;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--text);padding:13px 15px;font-size:16px;outline:none;font-family:inherit;}
+    .form-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(207,116,134,.16)}
+    .btn-primary{width:100%;min-height:50px;border:0;border-radius:999px;background:var(--accent);color:#fff;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 12px 24px -12px rgba(207,116,134,.8);}
+    .btn-primary:hover{background:#B65E71}
+    .btn-primary:disabled{opacity:.7;cursor:wait}
+    .login-error{display:none;margin:0 0 14px;color:var(--red);font-size:14px;font-weight:600;}
+    .login-note{margin:14px 0 0;color:var(--text2);font-size:12px;text-align:center;}
+    .login-note a{color:#A24E61}
+  </style>
+  <link rel="icon" type="image/png" href="/assets/favicon.png"/>
+<link rel="stylesheet" href="/assets/fonts.css"/>
+</head>
+<body>
+  <main class="login-card" aria-labelledby="loginTitle">
+    <div class="login-head">
+      <button class="close-btn" type="button" onclick="location.href='/'" aria-label="إغلاق">×</button>
+      <h1 id="loginTitle">لوحة تحكم ميمز كاميو</h1>
+    </div>
+    <form class="login-body" onsubmit="doLogin(event)" autocomplete="off">
+      <img class="login-logo" src="/assets/meemz-logo.png" alt="Meemz Cameo"/>
+      <div class="form-group">
+        <label class="form-label" for="loginEmail">البريد الإلكتروني</label>
+        <input class="form-input" type="email" id="loginEmail" name="email" autocomplete="username" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="loginPass">كلمة المرور</label>
+        <input class="form-input" type="password" id="loginPass" name="password" autocomplete="new-password" data-lpignore="true" data-1p-ignore="true" required />
+      </div>
+      <p class="login-error" id="loginError">بيانات غير صحيحة</p>
+      <button class="btn-primary" id="loginButton" type="submit">دخول</button>
+      <p class="login-note">للموظفين فقط · نسيتِ كلمة المرور؟ <a href="#" onclick="requestReset();return false;">إرسال رابط إعادة التعيين</a></p>
+    </form>
+  </main>
+  <script>
+    const API_BASE='/api';
+    const id=value=>document.getElementById(value);
+
+    async function redirectAuthorizedAdminPage(){
+      const response=await fetch(API_BASE+'/me',{credentials:'include',cache:'no-store'});
+      if(!response.ok)return false;
+      location.replace(API_BASE+'/admin-page');
+      return true;
+    }
+
+    async function doLogin(event){
+      event.preventDefault();
+      const button=id('loginButton');
+      const error=id('loginError');
+      button.disabled=true;
+      error.style.display='none';error.style.color='';error.textContent='بيانات غير صحيحة';
+      try{
+        const response=await fetch(API_BASE+'/login',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          credentials:'include',
+          body:JSON.stringify({
+            email:id('loginEmail').value.trim().toLowerCase(),
+            password:id('loginPass').value
+          })
+        });
+        const data=await response.json().catch(()=>({}));
+        if(!response.ok || !data.success)throw new Error(data.error||'Login failed');
+        location.replace(API_BASE+'/admin-page');
+      }catch(_error){
+        error.style.display='block';
+        button.disabled=false;
+      }
+    }
+
+    async function requestReset(){
+      const email=id('loginEmail').value.trim().toLowerCase();
+      const error=id('loginError');
+      if(!email){error.textContent='اكتبي بريدك الإلكتروني أولاً';error.style.display='block';return;}
+      await fetch(API_BASE+'/password-reset-request',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'include',body:JSON.stringify({email})}).catch(()=>null);
+      error.style.display='block';error.style.color='#4F7A5B';
+      error.textContent='إذا كان البريد مسجلاً، سيصلك رابط إعادة التعيين (يتطلب إعداد البريد SMTP).';
+    }
+
+    redirectAuthorizedAdminPage().catch(()=>false);
+  </script>
+</body>
+</html>

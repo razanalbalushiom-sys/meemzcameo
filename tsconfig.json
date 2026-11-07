@@ -1,0 +1,15 @@
+{
+  "include": ["server/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts"],
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "target": "ES2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "types": ["node"]
+  }
+}
