@@ -4,13 +4,7 @@ import path from "node:path";
 
 const root = path.resolve(__dirname, "..");
 const read = (p: string) => fs.readFileSync(path.join(root, p), "utf8");
-const storePages: Record<string, string> = {
-  "public/index.html": "home-page",
-  "public/shop.html": "shop-page",
-  "public/product.html": "product-page",
-  "public/about.html": "about-page",
-  "public/my-orders.html": "my-orders-page",
-};
+const storePages: Record<string, string> = { "public/index.html": "home-page" };
 const allSources = [
   ...Object.keys(storePages), "public/assets/store.js", "public/assets/store.css", "public/admin.html",
   "public/privacy.html", "public/terms.html", "public/data-deletion.html", "public/reset-password.html",
@@ -28,6 +22,13 @@ describe("Meemz Cameo storefront", () => {
       expect(html).toContain('id="cartDrawer" onclick="event.stopPropagation()"');
       expect(html).toContain('id="orderModal" onclick="event.stopPropagation()"');
     }
+  });
+
+  it("serves shop, product, about and my-orders from the single store page", () => {
+    const html = read("public/index.html");
+    for (const cls of ["shop-page", "product-page", "about-page", "my-orders-page"]) expect(html).toContain(cls);
+    expect(read("server/_core/index.ts")).toContain("app.get('*'"); // unknown paths fall back to index.html
+    for (const f of ["shop", "product", "about", "my-orders"]) expect(fs.existsSync(path.join(root, `public/${f}.html`))).toBe(false);
   });
 
   it("uses the Meemz Cameo brand palette and logo", () => {
